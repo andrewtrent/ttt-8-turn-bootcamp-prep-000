@@ -4,6 +4,10 @@ INPUT_PROMPT = "Please enter 1-9:"
 INVALID_INPUT = "That is not a valid move."
 
 ##variables
+<<<<<<< HEAD
+=======
+board = ["","","","","","","","",""]
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
 
 ##board display methods
 
@@ -15,22 +19,28 @@ end
 
 #cells that display with a border to their right
 def l_cell(arg = " ")
+<<<<<<< HEAD
     if arg == nil
       arg = " "
     end
     if arg.strip == ""
       arg = " "
     end
+=======
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
     print(" #{arg} |")
 end
 #cells that display with no border to their right
 def r_cell(arg = " ")
+<<<<<<< HEAD
   if arg == nil
     arg = " "
   end
   if arg.strip == ""
     arg = " "
   end  
+=======
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
   print(" #{arg} ")
   br
 end
@@ -68,9 +78,15 @@ def input_to_index(move)
   index = move.to_i - 1
 end
 
+<<<<<<< HEAD
 #transform board array at index with string value
 def move(board, index, char = "X")
   board[index] = char
+=======
+#transform board array at index with string value, strip whitespace to protect ASCII board appearance
+def move(board, index, char = "X")
+  board[index] = char.strip
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
 end
 
 ##input validation
@@ -92,6 +108,10 @@ def valid_move?(board,index)
     if board[index] == nil
         # return statement included to shield strip method from nil
         return false
+<<<<<<< HEAD
+=======
+    #strip whitespace to 
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
     elsif board[index].strip == ""
         false
     else
@@ -110,8 +130,14 @@ end
 ##program loop
 
 def turn(board)
+<<<<<<< HEAD
   puts INPUT_PROMPT
   choice = gets
+=======
+  puts "Please enter 1-9:"
+  choice = gets
+  choice = choice.strip
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
   choice = input_to_index(choice)
   truthiness = valid_move?(board, choice)
   if truthiness == false
@@ -120,5 +146,14 @@ def turn(board)
   else
     move(board, choice, char = "X")
     display_board(board)
+<<<<<<< HEAD
   end  
 end
+=======
+    turn(board)
+  end  
+end
+
+##program
+
+>>>>>>> a392fe4d12caa90602b0a9e7dc5fd453d2168376
